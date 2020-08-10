@@ -18,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "start:prod": "pm2 start server/index.js LogGame",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
