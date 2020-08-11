@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Log Game 控制台游戏
 
-## Available Scripts
+> 上班🎣不是梦
 
-In the project directory, you can run:
+## 介绍
 
-### `yarn start`
+一个**藏在浏览器控制台**的汽车游戏 🚗, 目前只是一个Demo, 先发出来看看**能不能收获一些意见**, 还有就是**求求star✨**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 示例
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- 线上地址: [http://loggame.ruofee.cn](http://loggame.ruofee.cn)
+- 游戏展示:
 
-### `yarn test`
+<img src="./public/demo.gif" alt="游戏" style="zoom:100%;" />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 游戏教学
 
-### `yarn build`
+1. 使用浏览器(推荐**Firefox**或**Chrome**, Firefox的话会更流畅)打开线上地址后, 右键打开菜单, 选择**检查元素/检查**;
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   <img src="./public/step1.png" alt="游戏" style="zoom:100%; box-shadow: 1px 1px 12px #eee;" />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+   
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. 切换到**控制台/console**, 将控制台拉到最长, 点击界面中的**开始按钮**开始游戏, 通过键盘**上/下/左/右**按键控制小车方向, 每**避开一块障碍加一分**, **碰撞障碍物时游戏结束**
 
-### `yarn eject`
+## 后续规划
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **发布npm**
+2. **补充游戏内容**
+3. **求star✨**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
