@@ -6,7 +6,7 @@ export interface StoneConfig {
 }
 
 export const stone = `
-OOOOOO
-OOOOOO
-OOOOOO
+O-==-O
+  ||  
+o-\\/-o
 `;

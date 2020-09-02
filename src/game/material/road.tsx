@@ -13,6 +13,7 @@ export const roadConfig: RoadConfig = {
 export interface FenceConfig {
     left?: string,
     right?: string,
+    content?: string,
     width: number,
     height: number
 }
@@ -37,6 +38,11 @@ export class Fence {
     getFenceRight(): string {
         const {right, height} = this.fenceConfig
         return this.getFence(right, height)
+    }
+    getContent(): string {
+        const {content, height} = this.fenceConfig
+        console.log(content)
+        return this.getFence(content, height)
     }
     getFenceLeft(): string {
         const {left, height} = this.fenceConfig

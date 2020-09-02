@@ -1,4 +1,4 @@
-import car, {carConfig, fire} from './material/car'
+import {carConfig, fire} from './material/car'
 import Canvas from '../utils/canvas'
 import {getRandom} from '../utils'
 import {roadConfig, Fence} from './material/road'
@@ -29,14 +29,14 @@ export default class LogGame {
          */
         this.canvasConfig = {
             width: 100,
-            height: 30
+            height: 50
         }
         /**
          * 游戏配置
          */
         this.game = {
             status: 0,
-            overTimer: 5,
+            overTimer: 2,
             score: 0
         }
         /**
@@ -45,6 +45,7 @@ export default class LogGame {
         this.fence = new Fence({
             left: '[',
             right: ']',
+            content: '&',
             width: 1,
             height: this.canvasConfig.height
         })
@@ -58,10 +59,11 @@ export default class LogGame {
             y: -3
         }
     }
-    start(): void {
+    start(card: string): void {
         const canvas: Canvas = new Canvas(this.canvasConfig.width, this.canvasConfig.height)
         const fenceRight: string = this.fence.getFenceRight()
         const fenceLeft: string = this.fence.getFenceLeft()
+        const fenceContent: string = this.fence.getContent()
         const maxX: number = this.fence.fenceConfig.width * (roadConfig.roadNum + 1) + roadConfig.width * roadConfig.roadNum
         const minX: number = this.fence.fenceConfig.width
 
@@ -108,7 +110,7 @@ export default class LogGame {
             }
         }
         window.addEventListener('keydown', this.carEvent)
-        
+
         this.gameInterval = setInterval(() => {
             console.clear()
             canvas.reload()
@@ -128,6 +130,7 @@ export default class LogGame {
              */
             if (canvas.isCollision(carConfig, this.stoneConfig)) {
                 // 如果发生碰撞则游戏结束
+                console.log('游戏结束')
                 this.game.status = 2
             }
             /**
@@ -151,11 +154,19 @@ export default class LogGame {
             /**
              * 添加马路素材
              */
-            let roadX: number = 0
+            let roadX: number = 0;
             for (let i: number = 0; i < roadConfig.roadNum + 1; i++) {
-                const material: string = (i === roadConfig.roadNum) ? fenceRight : fenceLeft
+                let material:string = fenceContent;
+                let width:number = this.fence.fenceConfig.width;
+                if (i !== 0 && i !== roadConfig.roadNum) {
+                    material = fenceContent;
+                    width = 2
+                } else {
+                    material = i === 0 ? fenceLeft : fenceRight;
+                }
+                // const material: string = (i === roadConfig.roadNum) ? fenceRight : fenceLeft
                 canvas.addMaterial(material, {
-                    width: this.fence.fenceConfig.width,
+                    width: width,
                     height: this.fence.fenceConfig.height,
                     x: roadX + i * this.fence.fenceConfig.width + roadConfig.width * i,
                     y: 0
@@ -166,7 +177,7 @@ export default class LogGame {
              */
             if (!(this.game.status === 2)) {
                 // 游戏未结束时渲染车子
-                canvas.addMaterial(car, carConfig)
+                canvas.addMaterial(card, carConfig)
             }
             else {
                 // 游戏结束时触发游戏结束倒计时
@@ -199,7 +210,10 @@ export default class LogGame {
             /**
              * 展示canvas
              */
-            console.log(`%c${canvas.space}`, 'color: blue')
+            // console.log(canvas)
+            // console.log(canvas.space)
+            // console.log(card)
+            console.log(`%c${canvas.space}`)
         }, 200)
     }
     stop(): void {

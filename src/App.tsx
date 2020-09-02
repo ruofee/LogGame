@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import LogGame from './game'
+import car from './game/material/car'
 
 // 加载控制台游戏
 const logGame = new LogGame()
@@ -13,9 +14,13 @@ const Emoji: React.FC<{content: string}> = props => {
 const emoji = ['🚘', '🚀', '🏃']
 
 function App() {
-  const start = (): void => {
-    logGame.start()
-  }
+    let value: string = car;
+    const start = (): void => {
+        logGame.start(value)
+    }
+    function onChang(event:any) {
+        value = event.target.value;
+    }
   return (
     <div className="App">
       <h1>LogGame --- 藏在浏览器控制台里的小游戏 {emoji.map((item: string, index: number) => <Emoji content={item} key={`emoji_${index}`}></Emoji>)}</h1>
@@ -31,8 +36,12 @@ function App() {
           <p>游戏规则：通过键盘中的上、下、左、右按键控制小车移动，躲避障碍物，每躲过一个障碍物得1分，碰撞障碍物时失败</p>
         </li>
         <li>
+            <p>自定义汽车样式</p>
+            <textarea defaultValue={value} onChange={onChang}/>
+        </li>
+        <li>
           <span>点击下方的“开始”按钮，开始游戏</span>
-          <p><button onClick={start} disabled={logGame.game.status === 1}>开始游戏</button></p>
+          <p><button onClick={start} disabled={logGame.game.status === 1} className="btn">开始游戏</button></p>
         </li>
       </ul>
     </div>

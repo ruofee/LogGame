@@ -17,9 +17,9 @@ export const carConfig: CarConfig = {
 }
 
 export const fire = `
-m  m
- mm
-m  m
+*  *
+ **
+*  *
 `;
 
 const car = `
