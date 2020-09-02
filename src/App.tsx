@@ -36,7 +36,7 @@ function App() {
           <p>游戏规则：通过键盘中的上、下、左、右按键控制小车移动，躲避障碍物，每躲过一个障碍物得1分，碰撞障碍物时失败</p>
         </li>
         <li>
-            <p>自定义汽车样式</p>
+            <p>自定义汽车样式 </p>
             <textarea defaultValue={value} onChange={onChang}/>
         </li>
         <li>
