@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App.tsx';
 import * as serviceWorker from './serviceWorker';
+
+// 引入百度统计代码
+import './assets/js/tongji';
 
 ReactDOM.render(
   <React.StrictMode>
