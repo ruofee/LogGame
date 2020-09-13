@@ -1,6 +1,8 @@
 import React from 'react'
 import {Typography, Divider, Button} from 'antd'
 import LogGame from '../../game'
+import step1 from '../../assets/imgs/step1.png';
+import step2 from '../../assets/imgs/step2.png';
 import './index.css';
 const {Title, Paragraph, Text} = Typography
 
@@ -48,8 +50,8 @@ const Content: React.FC = props => {
         <ul>
           <li>
             <p>打开控制台：按<Text code>F12</Text>或<Text code>右键-检查</Text>，切换到<Text code>控制台</Text></p>
-            <img className="App-img" src="/step1.png" alt="步骤1"/>
-            <img className="App-img" src="/step2.png" alt="步骤2"/>
+            <img className="App-img" src={step1} alt="步骤1"/>
+            <img className="App-img" src={step2} alt="步骤2"/>
           </li>
           <li>
             <p>游戏规则：通过键盘中的<Text code>上、下、左、右</Text>按键控制小车移动，躲避障碍物，每躲过一个障碍物得<Text code>1分</Text>，碰撞障碍物时则游戏结束</p>
