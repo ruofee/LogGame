@@ -1,9 +1,9 @@
 import React from 'react'
 import {Typography, Divider, Button} from 'antd'
 import LogGame from '../../game'
-import step1 from '../../assets/imgs/step1.png';
-import step2 from '../../assets/imgs/step2.png';
-import './index.css';
+import step1 from '../../assets/imgs/step1.png'
+import step2 from '../../assets/imgs/step2.png'
+import './index.css'
 const {Title, Paragraph, Text} = Typography
 
 const Emoji: React.FC<{content: string}> = props => {
