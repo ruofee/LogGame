@@ -24,3 +24,7 @@
 .button-wrap {
   margin-top: 10px;
 }
+
+.paragraph-list {
+  list-style-type: decimal !important;
+}

@@ -18,7 +18,7 @@ const start = (): void => {
   logGame.start()
 }
 
-const Content: React.FC = props => {
+const Content: React.FC = () => {
   return (
     <div className="content">
       <div className="title">
@@ -39,7 +39,7 @@ const Content: React.FC = props => {
           emoji.map((item: string, index: number) => <Emoji content={item} key={`emoji_${index}`}></Emoji>)
         }
       </Paragraph>
-      <Divider orientation="left">如何使用</Divider>
+      <Divider orientation="left">游戏教程</Divider>
       <Paragraph>
         目前为游戏Demo，可在该网站进行体验，步骤如下：
       </Paragraph>
@@ -47,7 +47,7 @@ const Content: React.FC = props => {
         推荐火狐浏览器和谷歌浏览器，若无法控制小车移动，请重新点击屏幕获取焦点
       </Paragraph>
       <Paragraph>
-        <ul>
+        <ul className="paragraph-list">
           <li>
             <p>打开控制台：按<Text code>F12</Text>或<Text code>右键-检查</Text>，切换到<Text code>控制台</Text></p>
             <img className="App-img" src={step1} alt="步骤1"/>
